@@ -1,6 +1,6 @@
 {
   "name": "authentication-utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -22,5 +22,8 @@
   },
   "files": [
     "dist/**/*"
-  ]
+  ],
+  "publishConfig": {
+    "@indiciez:registry": "https://npm.pkg.github.com"
+  }
 }
