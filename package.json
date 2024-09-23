@@ -25,7 +25,8 @@
     "dist/**/*"
   ],
   "publishConfig": {
-    "@indiciez:registry": "https://npm.pkg.github.com"
+    "@indiciez:registry": "https://npm.pkg.github.com",
+    "access": "public"
   },
   "repository": {
     "type": "git",
