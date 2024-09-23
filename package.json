@@ -26,5 +26,8 @@
   ],
   "publishConfig": {
     "@indiciez:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git"
   }
 }
