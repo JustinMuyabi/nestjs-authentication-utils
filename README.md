@@ -1,4 +1,4 @@
-# My NestJS Package
+# authentication utils package
 
 [![npm version](https://badge.fury.io/js/my-nestjs-package.svg)](https://badge.fury.io/js/my-nestjs-package)
 
