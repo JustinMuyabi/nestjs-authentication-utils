@@ -21,7 +21,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm publish
+      - name: Build Package
+        run: npm run build
+      - name: Publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUBTOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: npm publish
