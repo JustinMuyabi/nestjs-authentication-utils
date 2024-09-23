@@ -1,4 +1,4 @@
-# authentication utils package
+# My NestJS Package
 
 [![npm version](https://badge.fury.io/js/my-nestjs-package.svg)](https://badge.fury.io/js/my-nestjs-package)
 
@@ -9,13 +9,13 @@ A utility function to extract Bearer token from HTTP headers in a NestJS applica
 You can install the package using npm or yarn:
 
 ```sh
-npm install my-nestjs-package
+npm install authentication-utils
 ```
 
 or
 
 ```sh
-yarn add my-nestjs-package
+yarn add authentication-utils
 ```
 
 ## Usage
@@ -33,9 +33,9 @@ import { getTokenFromHeaders } from 'authentication-utils';
 Assuming you have an HTTP headers object, you can extract the Bearer token like this:
 
 ```typescript
-const headers = new Headers({
-  'Authorization': 'Bearer my-jwt-token',
-});
+const headers = {
+  'authorization': 'Bearer my-jwt-token',
+};
 
 const token = getTokenFromHeaders(headers);
 console.log(token); // Outputs: 'my-jwt-token'
@@ -52,7 +52,7 @@ import { getTokenFromHeaders } from 'authentication-utils';
 @Controller('example')
 export class ExampleController {
   @Get()
-  getExample(@Headers() headers: Headers): string {
+  getExample(@Headers() headers: { [key: string]: any }): string {
     const token = getTokenFromHeaders(headers);
     return `Extracted token: ${token}`;
   }
@@ -61,18 +61,14 @@ export class ExampleController {
 
 ## API
 
-### `getTokenFromHeaders(headers: Headers): string | null`
+### `getTokenFromHeaders(headers: { [key: string]: any }): string | null`
 
 #### Parameters
-- `headers`: An instance of the `Headers` object containing your HTTP headers.
+- `headers`: An object containing your HTTP headers. Typically, you'll pass `req.headers` from an Express request object.
 
 #### Returns
 - A `string` representing the extracted Bearer token if present, or `null` if not found.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request on GitHub.
-
-## License
-
-This project is licensed under the MIT License.
+GitHub. https://github.com/JustinMuyabi/nestjs-authentication-utils.git
